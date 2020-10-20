@@ -4,6 +4,7 @@ const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0
 const temperature = document.getElementById("temperature");
 const place = document.getElementById("place");
 const time = document.getElementById("time");
+const windspeed = document.getElementById("windspeed");
 
 window.onload = () => {
     setInterval(getTime, 1000);
@@ -25,6 +26,7 @@ async function getTemp() {
     console.log(data);
 
     place.innerHTML = data.name;
+    windspeed.innerHTML = data.wind.speed + " km/h";
     temperature.innerHTML = Math.round(tempC) + " °C";
 }
 
