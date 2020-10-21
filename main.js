@@ -3,7 +3,6 @@ let city = place.value;
 const temperature = document.getElementById("temperature");
 const time = document.getElementById("time");
 const windspeed = document.getElementById("windspeed");
-const btnSearch = document.getElementById("search");
 
 
 window.onload = () => {
@@ -11,12 +10,15 @@ window.onload = () => {
     getTemp(city);
 }
 
-btnSearch.onclick = () => {
-    // update city
-    city = place.value;
-    console.log(city);
-    getTemp(city);
+place.addEventListener("keydown", updatePlace);
+
+function updatePlace(event) {
+    if(event.keyCode == 13) {
+        city = place.value;
+        getTemp(city);
+    }
 }
+
 
 async function getTemp(city) {
     const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0333dd85d5639a156592d764193fbab5`);
@@ -45,4 +47,6 @@ function getTime() {
 
     time.innerHTML = h + ":" + m + ":" + s;
   }
+
+
 
