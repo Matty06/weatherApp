@@ -34,7 +34,15 @@ function getTime() {
     var h = today.getHours();
     var m = today.getMinutes();
     var s = today.getSeconds();
+
+    if(m < 10) {
+        m = "0" + m;
+    }
+
+    if(s < 10) {
+        s = "0" + s;
+    }
+
     time.innerHTML = h + ":" + m + ":" + s;
   }
-
 
