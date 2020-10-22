@@ -14,8 +14,12 @@ place.addEventListener("keydown", updatePlace);
 
 function updatePlace(event) {
     if(event.keyCode == 13) {
-        city = place.value;
-        getTemp(city);
+        if(place.value == "") {
+            alert("Type city");
+        } else {
+            city = place.value;
+            getTemp(city);
+        }
     }
 }
 

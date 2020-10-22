@@ -68,6 +68,22 @@ body {
   border-radius: 2px;
 }
 
+.weather div #place::-webkit-input-placeholder {
+  font-size: 11px;
+}
+
+.weather div #place:-ms-input-placeholder {
+  font-size: 11px;
+}
+
+.weather div #place::-ms-input-placeholder {
+  font-size: 11px;
+}
+
+.weather div #place::placeholder {
+  font-size: 11px;
+}
+
 .weather div h1 {
   font-size: 20px;
   font-weight: 700;

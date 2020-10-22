@@ -60,6 +60,10 @@ body {
             border: none;
             border-bottom: 3px solid black;
             border-radius: 2px;
+
+            &::placeholder {
+                font-size: 11px;
+            }
         }
         h1 {
             font-size: 20px;
